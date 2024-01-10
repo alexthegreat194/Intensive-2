@@ -1,6 +1,4 @@
-// script.js
 
-// Function to extract YouTube video ID from URL
 function getYouTubeId(url) {
     var videoId = url.split('v=')[-1];
     var ampersandPos = videoId.indexOf('&');
@@ -11,6 +9,7 @@ function getYouTubeId(url) {
 }
 
 function embedYouTubeVideo(videoUrl) {
+    console.log('Embedding YouTube video:', videoUrl);
 
     var videoId = getYouTubeId(videoUrl);
 
@@ -39,9 +38,9 @@ function embedYouTubeVideo(videoUrl) {
 
 // Function to be called when the "Submit" button is clicked
 function submitVideo() {
-
+    console.log('Submit video button clicked');
     var videoUrl = document.getElementById("videoURL").value;
-
+    console.log('Video URL:', videoUrl);
     embedYouTubeVideo(videoUrl);
 }
 

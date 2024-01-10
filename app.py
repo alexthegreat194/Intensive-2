@@ -4,7 +4,7 @@ from pymongo import MongoClient
 
 
 
-app = Flask(__name__, static_url_path = "/static")
+app = Flask(__name__, static_url_path = "/static", static_folder='static')
 # from pymongo import MongoClient
 # The Following code ia my own 
 uri = "mongodb+srv://FMuser:KoolWordz@cluster0.ykezvyd.mongodb.net/?retryWrites=true&w=majority"
@@ -28,7 +28,7 @@ def submitVideo():
     video_list = todos.find()
 
     print("Video List:", list(video_list))
-    
+
     return render_template('video_sub.html', videos=video_list)
 
 def get_youtube_id(url):
@@ -38,7 +38,6 @@ def get_youtube_id(url):
     if ampersand_pos != -1:
         video_id = video_id[:ampersand_pos]
     return video_id
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=5003)

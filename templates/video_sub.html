@@ -12,7 +12,7 @@
     <form action="submitVideo" method="post">
         <label for="videoURL">YouTube Video URL:</label>
         <input type="text" id="videoURL" name="videoURL">
-        <button type="button" onclick="submitVideo()">Submit</button>
+        <button type="button" id="submitVideo">Submit</button>
     </form>
 
     <div>
@@ -23,17 +23,17 @@
                 <li>{{ video.videoURL }}</li>
             {% endfor %}
         </ul>
-
-<!-- embeds video into webpage -->
-        {% for video in videos %}
-        <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.videoID }}" frameborder="0" allowfullscreen></iframe>
-        </div>
-        {% endfor %}
-        
     </div>
+
+    <!-- embeds video into webpage -->
+    {% for video in videos %}
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.videoID }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    {% endfor %}
+    
 <!-- add the abiliity to view previous post -->
     <div id="videoContainer"></div>
-    <script src="/static/script.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>
