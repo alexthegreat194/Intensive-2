@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video_submission</title>
+</head>
+<body>
+    <div>
+        <H1>Video Submissions</H1>
+    </div>
+    <form action="submitVideo" method="post">
+        <label for="videoURL">YouTube Video URL:</label>
+        <input type="text" id="videoURL" name="videoURL">
+        <button type="button" onclick="submitVideo()">Submit</button>
+    </form>
+
+    <div>
+        <h2>Submitted Videos</h2>
+        <!-- makes a list of previous videos -->
+        <ul>
+            {% for video in videos %}
+                <li>{{ video.videoURL }}</li>
+            {% endfor %}
+        </ul>
+
+<!-- embeds video into webpage -->
+        {% for video in videos %}
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.videoID }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {% endfor %}
+        
+    </div>
+<!-- add the abiliity to view previous post -->
+    <div id="videoContainer"></div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

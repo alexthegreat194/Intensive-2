@@ -1,0 +1,1 @@
+Completed the HTML for the video, profile, and login page. Must now do research on new JS language and look into a bootstrap CSS

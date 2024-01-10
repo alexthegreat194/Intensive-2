@@ -1,0 +1,434 @@
+/* Landing page */
+
+position: relative;
+width: 964px;
+height: 2295px;
+
+background: #575764;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 964px;
+height: 119px;
+left: 0px;
+top: 0px;
+
+background: #575764;
+
+
+/* CC1 */
+
+position: absolute;
+width: 127px;
+height: 39px;
+left: 66px;
+top: 46px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 35px;
+line-height: 42px;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* About */
+
+position: absolute;
+width: 129px;
+height: 27px;
+left: 297px;
+top: 53px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+
+
+
+/* Sessions */
+
+position: absolute;
+width: 133px;
+height: 29px;
+left: 447px;
+top: 51px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+
+
+
+/* Private Sessions */
+
+position: absolute;
+width: 165px;
+height: 24px;
+left: 684px;
+top: 51px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+
+
+
+/* CC1 Elite Training */
+
+position: absolute;
+width: 469px;
+height: 38px;
+left: 279px;
+top: 170px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 46px;
+line-height: 56px;
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Engineering the Most Elite Offense in NorCal */
+
+position: absolute;
+width: 694px;
+height: 53px;
+left: 130px;
+top: 261px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 40px;
+line-height: 48px;
+text-align: center;
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 212px;
+height: 294px;
+left: 62px;
+top: 784px;
+
+background: #D6C04A;
+border-radius: 20px;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 212px;
+height: 294px;
+left: 376px;
+top: 784px;
+
+background: #D6C04A;
+border-radius: 20px;
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 212px;
+height: 294px;
+left: 690px;
+top: 784px;
+
+background: #D6C04A;
+border-radius: 20px;
+
+
+/* Compete */
+
+position: absolute;
+width: 136px;
+height: 34px;
+left: 96px;
+top: 825px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 34px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Grow */
+
+position: absolute;
+width: 73px;
+height: 34px;
+left: 444px;
+top: 826px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 34px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Win */
+
+position: absolute;
+width: 55px;
+height: 34px;
+left: 772px;
+top: 835px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 34px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Competing against the best to make you better. */
+
+position: absolute;
+width: 143px;
+height: 150px;
+left: 96px;
+top: 882px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 27px;
+text-align: center;
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Making your mind and body prepared to take the field. */
+
+position: absolute;
+width: 125px;
+height: 123px;
+left: 734px;
+top: 885px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 27px;
+text-align: center;
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Using elite analysis CC1 looks at your flaws and makes them your strongest skill. */
+
+position: absolute;
+width: 173px;
+height: 161px;
+left: 396px;
+top: 871px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 27px;
+text-align: center;
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 764px;
+height: 461px;
+left: 62px;
+top: 1342px;
+
+background: #000000;
+border-radius: 20px;
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 764px;
+height: 471px;
+left: 136px;
+top: 1437px;
+
+background: #D6C04A;
+border-radius: 20px;
+
+
+/* Rectangle 10 */
+
+position: absolute;
+width: 964px;
+height: 514px;
+left: 0px;
+top: 163px;
+
+background: #D9D9D9;
+opacity: 0.2;
+
+
+/* *Gif Goes here */
+
+position: absolute;
+width: 230px;
+height: 59px;
+left: 132px;
+top: 501px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 27px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* Who Are We? */
+
+position: absolute;
+width: 458px;
+height: 61px;
+left: 130px;
+top: 1367px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 46px;
+line-height: 56px;
+
+color: #FFFFFF;
+
+border: 1px solid #FFFFFF;
+
+
+/* At CC1, we're committed to elevating players through expert coaching, cultivating excellence, resilience, and strategic prowess on and off the lacrosse field. Our mission is to shape not just skilled athletes but also resilient individuals ready for success in sports and life. */
+
+position: absolute;
+width: 684px;
+height: 229px;
+left: 175px;
+top: 1506px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 34px;
+
+color: #FFFFFF;
+
+border: 1px solid #000000;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 11 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 279px;
+height: 75px;
+left: 580px;
+top: 1799px;
+
+background: #6E717D;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+
+
+/* Learn More! */
+
+position: absolute;
+width: 205px;
+height: 35px;
+left: 631px;
+top: 1819px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 22 */
+
+position: absolute;
+width: 964px;
+height: 142px;
+left: -1px;
+top: 2153px;
+
+background: #000000;
