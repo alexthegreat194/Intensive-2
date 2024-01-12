@@ -47,24 +47,32 @@ function submitVideo() {
 
 // Function to fetch and update comments for a video
 function fetchComments(videoId) {
-    fetch('/comments?video_id=' + videoId)
-        .then(response => response.json())
-        .then(data => {
-            // Update the comment list on the webpage
-            var commentList = document.getElementById("commentList_" + videoId);
+    fetch('/comments', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ video_id: videoId }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Update the comment list on the webpage
+        var commentList = document.getElementById("commentList_" + videoId);
+        if (commentList) {
             commentList.innerHTML = "";
-
             data.comments.forEach(comment => {
                 var li = document.createElement("li");
-                li.appendChild(document.createTextNode(comment.text));
+                li.appendChild(document.createTextNode(comment));
                 commentList.appendChild(li);
             });
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+        } else {
+            console.error('Error: commentList not found');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 }
-
 // Function to add a comment for a video
 function addComment(videoId) {
     var commentText = document.getElementById("commentText_" + videoId).value;

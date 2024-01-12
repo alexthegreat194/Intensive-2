@@ -17,30 +17,26 @@
                 <li>{{ video.videoId }}</li>
                 
         </ul>
+        {% endfor %} 
     </div>
 
     <!-- embeds video into webpage -->
     
     {% for video in videoIds %}
-        <div>
-            <iframe width="550" height="315" src="https://www.youtube.com/embed/{{ video.videoId }}" frameborder="0" allowfullscreen></iframe>
-        </div>
-    
-
-    <!-- places comment section -->
-   
-    <h3>Comments</h3>
-        <ul>
-             {% for comment in video.comments %}
-            <li>{{ comment.text }}</li>
-            {% endfor %} 
-         </ul> 
-        <!-- Comment input form -->
+    <div>
+        <iframe width="550" height="315" src="https://www.youtube.com/embed/{{ video.videoId }}" frameborder="0" allowfullscreen></iframe>
         
-        <textarea id="commentText_{{ video.videoId }}" rows="2" cols="30"></textarea>
-        <button onclick="addComment('{{ video.videoId }}')">Add Comment</button>
+        <!-- Comment input form -->
+        <form id="commentForm_{{ video.videoId }}" onsubmit="addComment('{{ video.videoId }}'); return false;">
+            <textarea id="commentText_{{ video.videoId }}" rows="2" cols="30"></textarea>
+            <button type="submit">Add Comment</button>
+        </form>
+        
+        <!-- Comment list -->
+        <h3>Comments</h3>
+        <ul id="commentList_{{ video.videoId }}"></ul>
     </div>
-    {% endfor %} 
+{% endfor %}
 </div>
 <!-- add the abiliity to view previous post -->
 
