@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 from pymongo import MongoClient
 from flask_cors import CORS
 
@@ -18,25 +18,26 @@ db = client.flask_db
 videoIds = db.videoIds
 comments = db.comments
 
+@app.route("/", methods=["GET"])
+def index():
+    video_ids_list = videoIds.find()
+    video_ids_list = list(video_ids_list)
+    print("Video Ids List:", list(video_ids_list))
 
-
-@app.route('/', methods=["POST", "GET"])
+    # get comments and put them in the render template
+    
+    return render_template('video_sub.html', videoIds=video_ids_list) 
+    
+@app.route('/video', methods=["POST"])
 def video():
-    if request.method == "POST":
-        print("POST")
-        videoURL = request.form.get("videoURL")
-        videoId = videoURL[videoURL.find('v=') + 2:len(videoURL)] # videoId = videoURL[28: 39] -> videoId = "KL4--AJrJHQ"
+    print("POST")
+    videoURL = request.form.get("videoURL")
+    videoId = videoURL[videoURL.find('v=') + 2:len(videoURL)] # videoId = videoURL[28: 39] -> videoId = "KL4--AJrJHQ"
 
-        # Save the video URL to MongoDB
-        videoIds.insert_one({'videoId': videoId})
+    # Save the video URL to MongoDB
+    videoIds.insert_one({'videoId': videoId})
+    return redirect("/")
 
-    # Retrieve the updated list of videos from the database
-        video_ids_list = videoIds.find()
-        video_ids_list = list(video_ids_list)
-        print("Video Ids List:", list(video_ids_list))
-        return render_template('video_sub.html', videoIds=video_ids_list) 
-    else:
-        return render_template('video_sub.html')
 
 def get_youtube_id(url):
     # this is pulling the video ID for it to get embeded
@@ -72,7 +73,7 @@ def get_comments():
     comment_texts = [comment['text'] for comment in video_comments.get('comments', [])]
 
     # Return a JSON response
-    return jsonify({'comments': comment_texts})
+    return redirect("/")
 
 if __name__ == '__main__':
     app.run(debug=True, port=5003)
