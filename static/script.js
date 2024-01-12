@@ -5,6 +5,7 @@ function getYouTubeId(url) {
     if (ampersandPos !== -1) {
         videoId = videoId.substring(0, ampersandPos);
     }
+    console.log(videoId);
     return videoId;
 }
 
@@ -20,7 +21,7 @@ function embedYouTubeVideo(videoUrl) {
     var iframe = document.createElement('iframe');
 
     // Set the iframe attributes
-    iframe.setAttribute('width', '560');
+    iframe.setAttribute('width', '550');
     iframe.setAttribute('height', '315');
     iframe.setAttribute('src', embedUrl);
     iframe.setAttribute('frameborder', '0');
@@ -43,6 +44,55 @@ function submitVideo() {
     console.log('Video URL:', videoUrl);
     embedYouTubeVideo(videoUrl);
 }
+
+// Function to fetch and update comments for a video
+function fetchComments(videoId) {
+    fetch('/comments?video_id=' + videoId)
+        .then(response => response.json())
+        .then(data => {
+            // Update the comment list on the webpage
+            var commentList = document.getElementById("commentList_" + videoId);
+            commentList.innerHTML = "";
+
+            data.comments.forEach(comment => {
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(comment.text));
+                commentList.appendChild(li);
+            });
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+// Function to add a comment for a video
+function addComment(videoId) {
+    var commentText = document.getElementById("commentText_" + videoId).value;
+
+    fetch('/add_comment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            video_id: videoId,
+            comment_text: commentText,
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Refresh the comment list after a successful comment submission
+            fetchComments();
+        } else {
+            console.error('Error adding comment:', data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
 
 
 

@@ -1,1 +1,12 @@
 Completed the HTML for the video, profile, and login page. Must now do research on new JS language and look into a bootstrap CSS
+
+
+
+
+1.10.24
+fix bug issue, final product should be able to display a video AND a list of previous submissions. then add a comment section so the coach can comment on the video. 
+those will be your 3 functionalities.
+
+1.11.24
+I spent today fixing display issues with my website and have begain research on adding a comment section, tomorrow I hope to Complete
+the comment section and the abiity to scroll through previous videos on a page. may need to look into css and js .

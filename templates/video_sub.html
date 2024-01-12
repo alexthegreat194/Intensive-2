@@ -1,39 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video_submission</title>
-</head>
-<body>
+{% extends 'base.html' %} 
+{% block content %}
     <div>
         <H1>Video Submissions</H1>
     </div>
-    <form action="submitVideo" method="post">
+    <form method="post">
         <label for="videoURL">YouTube Video URL:</label>
         <input type="text" id="videoURL" name="videoURL">
-        <button type="button" id="submitVideo">Submit</button>
+        <button type="submit" id="submitVideo">Submit</button>
     </form>
 
     <div>
         <h2>Submitted Videos</h2>
-        <!-- makes a list of previous videos -->
+        makes a list of previous videos
         <ul>
-            {% for video in videos %}
-                <li>{{ video.videoURL }}</li>
-            {% endfor %}
+            {% for video in videoIds %}
+                <li>{{ video.videoId }}</li>
+                
         </ul>
     </div>
 
     <!-- embeds video into webpage -->
-    {% for video in videos %}
-    <div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ video.videoID }}" frameborder="0" allowfullscreen></iframe>
-    </div>
-    {% endfor %}
     
+    {% for video in videoIds %}
+        <div>
+            <iframe width="550" height="315" src="https://www.youtube.com/embed/{{ video.videoId }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    
+
+    <!-- places comment section -->
+   
+    <h3>Comments</h3>
+        <ul>
+             {% for comment in video.comments %}
+            <li>{{ comment.text }}</li>
+            {% endfor %} 
+         </ul> 
+        <!-- Comment input form -->
+        
+        <textarea id="commentText_{{ video.videoId }}" rows="2" cols="30"></textarea>
+        <button onclick="addComment('{{ video.videoId }}')">Add Comment</button>
+    </div>
+    {% endfor %} 
+</div>
 <!-- add the abiliity to view previous post -->
-    <div id="videoContainer"></div>
-    <script src="/script.js"></script>
-</body>
-</html>
+
+<div id="videoContainer"></div>
+    {% endblock %} 
