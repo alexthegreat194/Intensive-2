@@ -3,7 +3,7 @@
     <div>
         <H1>Video Submissions</H1>
     </div>
-    <form method="post">
+    <form method="post" action="/video">
         <label for="videoURL">YouTube Video URL:</label>
         <input type="text" id="videoURL" name="videoURL">
         <button type="submit" id="submitVideo">Submit</button>
@@ -27,8 +27,8 @@
         <iframe width="550" height="315" src="https://www.youtube.com/embed/{{ video.videoId }}" frameborder="0" allowfullscreen></iframe>
         
         <!-- Comment input form -->
-        <form id="commentForm_{{ video.videoId }}" onsubmit="addComment('{{ video.videoId }}'); return false;">
-            <textarea id="commentText_{{ video.videoId }}" rows="2" cols="30"></textarea>
+        <form id="commentForm_{{ video.videoId }}" method="post" action="comments"); return false;">
+            <textarea id="commentText_{{ video.videoId }}" name="text" rows="2" cols="30"></textarea>
             <button type="submit">Add Comment</button>
         </form>
         
